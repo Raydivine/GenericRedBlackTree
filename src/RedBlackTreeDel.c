@@ -21,7 +21,12 @@ Node *_delRedBlackTree(Node **rootPtr, Node *newNode, int (*compareNode)(void *d
   if(root == NULL)
     Throw(ERR_NODE_UNAVAIBLE);
 
-  if(compareNode(root->data, newNode->data) == 0){
+  else if(compareNode(root->data, newNode->data) == 1)
+    node = _delRedBlackTree( &root->right, newNode, compareNode);
+  else if(compareNode(root->data, newNode->data) == -1)
+    node = _delRedBlackTree( &root->left, newNode, compareNode);
+  
+  else{
     if(root->left || root->right){      //Checking is the removeNode has childNode
       successorNode = removeNextLargerSuccessor(&(*rootPtr)->right);
       successorNode->left  = (*rootPtr)->left;
@@ -31,10 +36,6 @@ Node *_delRedBlackTree(Node **rootPtr, Node *newNode, int (*compareNode)(void *d
     else *rootPtr = NULL;
     return root;
   }
-  else if(compareNode(root->data, newNode->data) == 1)
-    node = _delRedBlackTree( &root->right, newNode, compareNode);
-  else if(compareNode(root->data, newNode->data) == -1)
-    node = _delRedBlackTree( &root->left, newNode, compareNode);
   
   caseSelect(&(*rootPtr));
   return node;

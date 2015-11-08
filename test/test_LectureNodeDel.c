@@ -1,18 +1,20 @@
 #include "unity.h"
-#include "Node.h"
-#include "InitNode.h"
-#include "RedBlackTreeDel.h"
-#include "CustomAssertions.h"
-#include "TreeBalance.h"
-#include "Rotations.h"
 #include "CompareObjects.h"
 #include "InitExamTimeTable.h"
 #include "ExamStruct.h"
-#include "ErrorCode.h"
-#include "CException.h"
+
+#include "Node.h"
+#include "InitNode.h"
+#include "Rotations.h"
 #include "CaseSelect.h"
 #include "CaseHandle.h"
+#include "TreeBalance.h"
 #include "TreeChecking.h"
+#include "RedBlackTreeDel.h"
+#include "CustomAssertions.h"
+#include "ErrorCode.h"
+#include "CException.h"
+
 
 Node node1, node2, node3, node4, node5, node6, node7, node8, node9, node10, node11, node12, node13, node14, node15;
 Lecture lecture1, lecture2, lecture3, lecture4, lecture5, lecture6, lecture7, lecture8, lecture9, lecture10, lecture11, lecture12, lecture13, lecture14, lecture15;
